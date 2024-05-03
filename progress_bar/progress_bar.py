@@ -13,14 +13,14 @@ class ProgressBar():
     # pylint: disable=too-many-instance-attributes
 
     def __init__(self, total_items: int, name: str = '',
-                 stopwatch: bool = True, offset: float = None, prefix: str=''):
+                 use_stopwatch: bool = True, offset: float = None, prefix: str = ''):
         self.total = float(total_items)
         self.name = name
         self.iteration = 0.0
         self.length_of_bar = 0
         self.has_finished = False
         self.start_time = offset
-        self.show_clock = stopwatch
+        self.show_clock = use_stopwatch
         self.clock = self.start_time
         self.has_ended = False
         self.prefix = prefix
