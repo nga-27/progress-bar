@@ -4,6 +4,10 @@ A simple-to-use progress bar for python terminal applications, adapted from a po
 
 [Credit to this post](https://stackoverflow.com/questions/3173320/text-progress-bar-in-terminal-with-block-characters)
 
+<img alt="magical progress bar" src="./static/progress_bar.jpeg" width=500 />
+
+###### Image created by Bing Image Creator (Dall-E 3)
+
 ---
 
 # Installation
@@ -11,7 +15,7 @@ A simple-to-use progress bar for python terminal applications, adapted from a po
 Installation is fairly straightforward:
 
 ```sh
-pip install progress_bar@git+ssh://git@github.com/nga-27/progress-bar@v0.0.1
+pip install progress_bar@git+ssh://git@github.com/nga-27/progress-bar@v0.1.0
 ```
 
 Note, for those using `zsh` terminal, you may need to add quotes around the repo string _after_ `pip install` portion.
