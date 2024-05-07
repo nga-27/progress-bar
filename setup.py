@@ -15,6 +15,7 @@ See: https://packaging.python.org/tutorials/installing-packages/#installing-setu
 """
 import re
 import subprocess
+import platform
 from setuptools import find_packages, setup
 
 # Package meta-data.
@@ -24,7 +25,7 @@ URL = 'https://github.mmm.com/nga-27/progress-bar'
 EMAIL = 'namell91@gmail.com'
 AUTHOR = 'Nick Amell'
 REQUIRES_PYTHON = '>=3.9.0, <3.12.0'
-VERSION = '0.1.0'
+VERSION = '0.1.1'
 
 # What packages are required for this module to be executed?
 REQUIRES = [
@@ -37,8 +38,16 @@ REQUIRES_DEV = [
 
 def has_ssh() -> bool:
     result = None
-    which_ssh = subprocess.run(['which', 'ssh'])
-    if which_ssh.returncode == 0:
+    try:
+        if 'windows' in platform.platform().lower():
+            ssh_test = subprocess.run(['where', 'ssh'])
+        else:
+            ssh_test = subprocess.run(['which', 'ssh'])
+    except Exception:
+        print(f"Exception, SSH not found. Will try https")
+        return False
+
+    if ssh_test.returncode == 0:
         result = subprocess.Popen(['ssh', '-Tq', 'git@github.com', '&>', '/dev/null'])
         result.communicate()
     if not result or result.returncode == 255:
