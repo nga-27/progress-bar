@@ -13,7 +13,8 @@ class ProgressBar():
     # pylint: disable=too-many-instance-attributes
 
     def __init__(self, total_items: int, name: str = '',
-                 use_stopwatch: bool = True, offset: float = None, prefix: str = ''):
+                 use_stopwatch: bool = True, offset: float = None, prefix: str = '',
+                 fill: str = '#'):
         self.total = float(total_items)
         self.name = name
         self.iteration = 0.0
@@ -24,25 +25,30 @@ class ProgressBar():
         self.clock = self.start_time
         self.has_ended = False
         self.prefix = prefix
+        self.fill = fill
 
     def start(self):
         """ Kicks off class timer, etc. """
         if self.start_time is None:
             self.start_time = time.time()
-        self.__print_progress_bar(self.iteration, self.total, obj=self.name, prefix=self.prefix)
+        self.__print_progress_bar(
+            self.iteration, self.total, obj=self.name, prefix=self.prefix, fill=self.fill)
 
     def update(self, iteration: int):
         """ Manual changing of the progress bar """
-        self.__print_progress_bar(iteration, self.total, obj=self.name, prefix=self.prefix)
+        self.__print_progress_bar(
+            iteration, self.total, obj=self.name, prefix=self.prefix, fill=self.fill)
 
     def uptick(self, increment=1.0):
         """ Automatic updating of the progress bar """
         self.iteration += increment
-        self.__print_progress_bar(self.iteration, self.total, obj=self.name, prefix=self.prefix)
+        self.__print_progress_bar(
+            self.iteration, self.total, obj=self.name, prefix=self.prefix, fill=self.fill)
 
     def end(self) -> float:
         """ Sets all progress to 100% and returns time of completion """
-        self.__print_progress_bar(self.total, self.total, obj=self.name, prefix=self.prefix)
+        self.__print_progress_bar(
+            self.total, self.total, obj=self.name, prefix=self.prefix, fill=self.fill)
         return time.time()
 
     def interrupt(self, message: str = ''):

@@ -25,7 +25,7 @@ URL = 'https://github.mmm.com/nga-27/progress-bar'
 EMAIL = 'namell91@gmail.com'
 AUTHOR = 'Nick Amell'
 REQUIRES_PYTHON = '>=3.9.0, <3.12.0'
-VERSION = '0.1.1'
+VERSION = '0.1.2'
 
 # What packages are required for this module to be executed?
 REQUIRES = [
