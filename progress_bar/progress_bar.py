@@ -12,7 +12,7 @@ class ProgressBar():
     """
     # pylint: disable=too-many-instance-attributes
 
-    def __init__(self, total_items: int, name: str = '',
+    def __init__(self, total_items: int, name: str = '', # pylint: disable=too-many-arguments
                  use_stopwatch: bool = True, offset: float = None, prefix: str = '',
                  fill: str = '#'):
         self.total = float(total_items)
