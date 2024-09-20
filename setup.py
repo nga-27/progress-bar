@@ -24,8 +24,8 @@ DESCRIPTION = 'A simple-to-use progress bar for python terminal applications'
 URL = 'https://github.mmm.com/nga-27/progress-bar'
 EMAIL = 'namell91@gmail.com'
 AUTHOR = 'Nick Amell'
-REQUIRES_PYTHON = '>=3.9.0, <3.12.0'
-VERSION = '0.1.2'
+REQUIRES_PYTHON = '>=3.9.0, <3.13.0'
+VERSION = '0.1.3'
 
 # What packages are required for this module to be executed?
 REQUIRES = [
@@ -89,5 +89,6 @@ setup(
         'Programming Language :: Python :: 3.9',
         'Programming Language :: Python :: 3.10',
         'Programming Language :: Python :: 3.11',
+        'Programming Language :: Python :: 3.12',
     ],
 )
