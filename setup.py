@@ -21,7 +21,7 @@ from setuptools import find_packages, setup
 # Package meta-data.
 NAME = 'progress-bar'
 DESCRIPTION = 'A simple-to-use progress bar for python terminal applications'
-URL = 'https://github.mmm.com/nga-27/progress-bar'
+URL = 'https://github.com/nga-27/progress-bar'
 EMAIL = 'namell91@gmail.com'
 AUTHOR = 'Nick Amell'
 REQUIRES_PYTHON = '>=3.9.0, <3.13.0'
