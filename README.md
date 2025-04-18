@@ -15,7 +15,7 @@ A simple-to-use progress bar for python terminal applications, adapted from a po
 Installation is fairly straightforward:
 
 ```sh
-pip install progress_bar@git+ssh://git@github.com/nga-27/progress-bar@v0.1.0
+pip install progress_bar@git+ssh://git@github.com/nga-27/progress-bar@v0.1.4
 ```
 
 Note, for those using `zsh` terminal, you may need to add quotes around the repo string _after_ `pip install` portion.
